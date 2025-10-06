@@ -1,1 +1,0 @@
-# qa_guru_graduation_project_rest_api
