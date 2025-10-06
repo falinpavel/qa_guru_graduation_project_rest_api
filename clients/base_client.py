@@ -1,6 +1,7 @@
-from typing import Any, Optional
 import allure
 import requests
+
+from typing import Any, Optional
 from urllib.parse import urljoin
 from config import HTTPClientConfig
 from tools.logger import get_logger

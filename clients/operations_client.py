@@ -1,4 +1,5 @@
 import allure
+
 from requests import Response
 from clients.base_client import BaseClient, get_http_client
 from config import Settings

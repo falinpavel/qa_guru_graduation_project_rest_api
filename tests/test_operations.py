@@ -1,6 +1,7 @@
-from http import HTTPStatus
 import allure
 import pytest
+
+from http import HTTPStatus
 from clients.operations_client import OperationsClient
 from schema.operations import OperationsSchema, OperationSchema, CreateOperationSchema, UpdateOperationSchema
 from tools.assertions.base import assert_status_code

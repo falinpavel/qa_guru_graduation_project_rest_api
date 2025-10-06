@@ -1,4 +1,5 @@
 import allure
+
 from schema.operations import CreateOperationSchema, OperationSchema, UpdateOperationSchema
 from tools.assertions.base import assert_equal
 from tools.logger import get_logger

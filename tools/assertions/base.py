@@ -1,5 +1,6 @@
-from typing import Any
 import allure
+
+from typing import Any
 from tools.logger import get_logger
 
 logger = get_logger("BASE_ASSERTIONS")

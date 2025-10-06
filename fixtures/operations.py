@@ -1,4 +1,5 @@
 import pytest
+
 from clients.operations_client import OperationsClient
 from schema.operations import OperationSchema
 
