@@ -1489,4 +1489,4 @@ dev = ["ruff"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<4.0"
-content-hash = "d1e68ccebcaef53ff04e534b8b7e37d9d74a01ca09cb4e5bed047596afa1eb09"
+content-hash = "69abf1243f2b0be62a0b9ddee32920d120ad2805084705c0bb55ddd537cbea4b"
