@@ -17,7 +17,6 @@ from tools.assertions.operations import assert_operation, assert_create_operatio
 from tools.assertions.schema import validate_json_schema
 
 
-
 @pytest.mark.operations
 @pytest.mark.regression
 @allure_high_level_marks(
