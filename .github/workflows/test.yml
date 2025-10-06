@@ -27,11 +27,16 @@ jobs:
           poetry config virtualenvs.create false
           poetry install --no-interaction --no-ansi --no-root
 
-      - name: Load .env variables
+      - name: Load .env variables safely
         run: |
-          set -o allexport
-          source .env
-          set +o allexport
+          grep -v '^#' .env | while IFS= read -r line; do
+            # преобразовать FAKE_BANK_HTTP_CLIENT.URL=... в FAKE_BANK_HTTP_CLIENT_URL=...
+            var_name=$(echo "$line" | cut -d= -f1 | tr '.' '_')
+            var_value=$(echo "$line" | cut -d= -f2-)
+            echo "Export $var_name=$var_value"
+            export "$var_name=$var_value"
+          done
+          env # для отладки вывести все переменные окружения
 
       - name: Run API tests with pytest and generate Allure results
         run: |
