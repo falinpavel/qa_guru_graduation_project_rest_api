@@ -2,7 +2,12 @@ import pytest
 
 from http import HTTPStatus
 from clients.operations_client import OperationsClient
-from schema.operations import OperationsSchema, OperationSchema, CreateOperationSchema, UpdateOperationSchema
+from schema.operations import (
+    OperationsSchema,
+    OperationSchema,
+    CreateOperationSchema,
+    UpdateOperationSchema
+)
 from tools.allure.allure_custom_labels import (
     allure_high_level_marks,
     allure_mid_level_marks,

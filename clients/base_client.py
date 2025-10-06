@@ -1,8 +1,10 @@
-import allure
 import requests
 
 from typing import Any, Optional
 from urllib.parse import urljoin
+
+from allure_commons._allure import step
+
 from config import HTTPClientConfig
 from tools.logger import get_logger
 
@@ -23,7 +25,7 @@ class BaseClient:
         self.timeout = timeout
         self.session = requests.Session()
 
-    @allure.step("Make GET request to {url}")
+    @step("Make GET request to {url}")
     def get(self, url: str, params: Optional[dict] = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request("GET", full_url)
@@ -31,7 +33,7 @@ class BaseClient:
         log_response(response.status_code, response.reason, full_url)
         return response
 
-    @allure.step("Make POST request to {url}")
+    @step("Make POST request to {url}")
     def post(self, url: str, json: Any = None, data: Any = None, files: Any = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request("POST", full_url)
@@ -39,7 +41,7 @@ class BaseClient:
         log_response(response.status_code, response.reason, full_url)
         return response
 
-    @allure.step("Make PATCH request to {url}")
+    @step("Make PATCH request to {url}")
     def patch(self, url: str, json: Any = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request("PATCH", full_url)
@@ -47,7 +49,7 @@ class BaseClient:
         log_response(response.status_code, response.reason, full_url)
         return response
 
-    @allure.step("Make DELETE request to {url}")
+    @step("Make DELETE request to {url}")
     def delete(self, url: str) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request("DELETE", full_url)

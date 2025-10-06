@@ -4,21 +4,16 @@ from functools import wraps
 
 
 def allure_high_level_marks(epic: str, feature: str):
-    """Добавляем allure маркировки на уровне класса"""
 
     def class_decorator(cls):
         cls = allure.epic(epic)(cls)
         cls = allure.feature(feature)(cls)
         return cls
-
     return class_decorator
-
 
 def allure_mid_level_marks(
     story: str, testcase_id: str, title: str, label: str, owner: str
 ):
-    """Добавляем allure маркировки на уровне функции"""
-
     def func_decorator(func):
         @wraps(func)
         def wrapper(*args, **kwargs):
@@ -28,7 +23,5 @@ def allure_mid_level_marks(
             allure.dynamic.label(label)
             allure.dynamic.label("owner", owner)
             return func(*args, **kwargs)
-
         return wrapper
-
     return func_decorator
