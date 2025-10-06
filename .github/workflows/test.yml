@@ -23,11 +23,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install poetry
+          poetry config virtualenvs.create false
+          poetry install --no-interaction --no-ansi
 
       - name: Run API tests with pytest and generate Allure results
         run: |
-          pytest -m regression --alluredir=allure-results --numprocesses 2
+          poetry run pytest -m regression --alluredir=allure-results
 
       - name: Upload Allure results
         if: always()
