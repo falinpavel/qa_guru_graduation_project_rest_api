@@ -28,7 +28,7 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-addopts = "-s -v"
+addopts = "-vv -s --showlocals --tb=long -rfEX --durations=10 --alluredir=allure-results"
 python_files = ["*_tests.py", "test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
