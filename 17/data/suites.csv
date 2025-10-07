@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","158","Delete operation","tests","Tue Oct 07 21:14:39 GMT 2025","passed","Tue Oct 07 21:14:39 GMT 2025","TestOperations","test_operations","",""
+"","484","Get list of operations","tests","Tue Oct 07 21:14:37 GMT 2025","passed","Tue Oct 07 21:14:38 GMT 2025","TestOperations","test_operations","",""
+"","176","Get operation by id","tests","Tue Oct 07 21:14:38 GMT 2025","passed","Tue Oct 07 21:14:38 GMT 2025","TestOperations","test_operations","",""
+"","82","Update operation","tests","Tue Oct 07 21:14:38 GMT 2025","passed","Tue Oct 07 21:14:39 GMT 2025","TestOperations","test_operations","",""
+"","129","Create operation","tests","Tue Oct 07 21:14:38 GMT 2025","passed","Tue Oct 07 21:14:38 GMT 2025","TestOperations","test_operations","",""
