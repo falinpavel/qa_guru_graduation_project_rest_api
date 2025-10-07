@@ -34,8 +34,8 @@ class TestOperations:
     )
     def test_get_operations(self, operations_client: OperationsClient):
         response = operations_client.get_operations_api()
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        validate_json_schema(response.json(), OperationsSchema.model_json_schema())
+        assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
+        validate_json_schema(instance=response.json(), schema=OperationsSchema.model_json_schema())
 
     @allure_mid_level_marks(
         story="User can get operation by id",
@@ -45,11 +45,11 @@ class TestOperations:
         owner="AQA FALIN PAVEL"
     )
     def test_get_operation(self, operations_client: OperationsClient, function_operation: OperationSchema):
-        response = operations_client.get_operation_api(function_operation.id)
-        operation = OperationSchema.model_validate_json(response.text)
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_operation(operation, function_operation)
-        validate_json_schema(response.json(), operation.model_json_schema())
+        response = operations_client.get_operation_api(operation_id=function_operation.id)
+        operation = OperationSchema.model_validate_json(json_data=response.text)
+        assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
+        assert_operation(actual=operation, expected=function_operation)
+        validate_json_schema(instance=response.json(), schema=operation.model_json_schema())
 
     @allure_mid_level_marks(
         story="User can create new operation",
@@ -60,11 +60,11 @@ class TestOperations:
     )
     def test_create_operation(self, operations_client: OperationsClient):
         request = CreateOperationSchema()
-        response = operations_client.create_operation_api(request)
-        operation = OperationSchema.model_validate_json(response.text)
-        assert_status_code(response.status_code, HTTPStatus.CREATED)
-        assert_create_operation(operation, request)
-        validate_json_schema(response.json(), operation.model_json_schema())
+        response = operations_client.create_operation_api(operation=request)
+        operation = OperationSchema.model_validate_json(json_data=response.text)
+        assert_status_code(actual=response.status_code, expected=HTTPStatus.CREATED)
+        assert_create_operation(actual=operation, expected=request)
+        validate_json_schema(instance=response.json(), schema=operation.model_json_schema())
 
     @allure_mid_level_marks(
         story="User can update operation by id",
@@ -75,11 +75,11 @@ class TestOperations:
     )
     def test_update_operation(self, operations_client: OperationsClient, function_operation: OperationSchema):
         request = UpdateOperationSchema()
-        response = operations_client.update_operation_api(function_operation.id, request)
-        operation = OperationSchema.model_validate_json(response.text)
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        assert_create_operation(operation, request)
-        validate_json_schema(response.json(), operation.model_json_schema())
+        response = operations_client.update_operation_api(operation_id=function_operation.id, operation=request)
+        operation = OperationSchema.model_validate_json(json_data=response.text)
+        assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
+        assert_create_operation(actual=operation, expected=request)
+        validate_json_schema(instance=response.json(), schema=operation.model_json_schema())
 
     @allure_mid_level_marks(
         story="User can delete operation by id",
@@ -89,7 +89,7 @@ class TestOperations:
         owner="AQA FALIN PAVEL"
     )
     def test_delete_operation(self, operations_client: OperationsClient, function_operation: OperationSchema):
-        delete_response = operations_client.delete_operation_api(function_operation.id)
-        assert_status_code(delete_response.status_code, HTTPStatus.OK)
-        get_response = operations_client.get_operation_api(function_operation.id)
-        assert_status_code(get_response.status_code, HTTPStatus.NOT_FOUND)
+        delete_response = operations_client.delete_operation_api(operation_id=function_operation.id)
+        assert_status_code(actual=delete_response.status_code, expected=HTTPStatus.OK)
+        get_response = operations_client.get_operation_api(operation_id=function_operation.id)
+        assert_status_code(actual=get_response.status_code, expected=HTTPStatus.NOT_FOUND)
