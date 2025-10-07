@@ -6,15 +6,15 @@
 # <p  align="center"> В реализации использованы инструменты и библиотеки:
 
 <p  align="center">
-  <code><img width="6%" title="Pycharm" src="resources/github_readme/images/logo/pycharm.png" alt="pycharm"></code>
-  <code><img width="6%" title="Python" src="resources/github_readme/images/logo/python.png" alt="python"></code>
-  <code><img width="6%" title="Pytest" src="resources/github_readme/images/logo/pytest.png" alt="pytest"></code>
-  <code><img width="6%" title="Selene" src="resources/github_readme/images/logo/selene.png" alt="selene"></code>
-  <code><img width="6%" title="Selenium" src="resources/github_readme/images/logo/selenium.png" alt="selenium"></code>
-  <code><img width="6%" title="GitHub" src="resources/github_readme/images/logo/github.png" alt="github"></code>
-  <code><img width="6%" title="Jenkins" src="resources/github_readme/images/logo/jenkins.png" alt="jenkins"></code>
-  <code><img width="6%" title="Allure Report" src="resources/github_readme/images/logo/allure_report.png" alt="allure"></code>
-  <code><img width="6%" title="Telegram" src="resources/github_readme/images/logo/tg.png" alt="telegram"></code>
+  <code><img width="6%" title="Pycharm" src=".github/github_readme/images/logo/pycharm.png" alt="pycharm"></code>
+  <code><img width="6%" title="Python" src=".github/github_readme/images/logo/python.png" alt="python"></code>
+  <code><img width="6%" title="Pytest" src=".github/github_readme/images/logo/pytest.png" alt="pytest"></code>
+  <code><img width="6%" title="Selene" src=".github/github_readme/images/logo/selene.png" alt="selene"></code>
+  <code><img width="6%" title="Selenium" src=".github/github_readme/images/logo/selenium.png" alt="selenium"></code>
+  <code><img width="6%" title="GitHub" src=".github/github_readme/images/logo/github.png" alt="github"></code>
+  <code><img width="6%" title="Jenkins" src=".github/github_readme/images/logo/jenkins.png" alt="jenkins"></code>
+  <code><img width="6%" title="Allure Report" src=".github/github_readme/images/logo/allure_report.png" alt="allure"></code>
+  <code><img width="6%" title="Telegram" src=".github/github_readme/images/logo/tg.png" alt="telegram"></code>
 </p>
 
 ## <img width="3%" title="pycharm" src="resources/images/logo/pycharm.png"> Запуск тестов локально:
