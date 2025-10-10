@@ -1,0 +1,2 @@
+INFO     HTTP_CLIENT:base_client.py:15 Make POST request to https://api.sampleapis.com/fakebank/accounts
+INFO     HTTP_CLIENT:base_client.py:19 Got response 200 OK from https://api.sampleapis.com/fakebank/accounts
