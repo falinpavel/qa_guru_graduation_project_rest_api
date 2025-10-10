@@ -24,7 +24,7 @@ class UpdateOperationSchema(BaseModel):
 
 
 class OperationSchema(CreateOperationSchema):
-    id: int
+    id: int | None
 
 
 class OperationsSchema(RootModel):
