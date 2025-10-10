@@ -32,6 +32,7 @@ class TestOperations:
         label="REST API",
         owner="AQA FALIN PAVEL"
     )
+    @pytest.mark.xfail(reason="BUG-1 Response schema is not valid, credit field got string instead of float")
     def test_get_operations(self, operations_client: OperationsClient):
         response = operations_client.get_operations_api()
         assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
