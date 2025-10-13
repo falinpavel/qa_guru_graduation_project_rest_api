@@ -2,7 +2,11 @@ from allure_commons._allure import step
 from requests import Response
 from clients.base_client import BaseClient, get_http_client
 from config import Settings
-from schema.operations import CreateOperationSchema, UpdateOperationSchema, OperationSchema
+from schema.operations import (
+    CreateOperationSchema,
+    UpdateOperationSchema,
+    OperationSchema
+)
 from tools.routes import APIRoutes
 
 
@@ -18,11 +22,14 @@ class OperationsClient(BaseClient):
 
     @step("Create operation")
     def create_operation_api(self, operation: CreateOperationSchema) -> Response:
-        return self.post(APIRoutes.OPERATIONS, json=operation.model_dump(mode="json", by_alias=True))
+        return self.post(
+            APIRoutes.OPERATIONS,
+            json=operation.model_dump(mode="json", by_alias=True)
+        )
 
     @step("Update operation by id {operation_id}")
     def update_operation_api(self, operation_id: int, operation: UpdateOperationSchema) -> Response:
-        return self.patch(f"{APIRoutes.OPERATIONS}/{operation_id}",
+        return self.patch(url=f"{APIRoutes.OPERATIONS}/{operation_id}",
                           json=operation.model_dump(mode="json", by_alias=True, exclude_none=True))
 
     @step("Delete operation by id {operation_id}")

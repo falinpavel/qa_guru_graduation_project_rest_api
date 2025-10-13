@@ -13,7 +13,11 @@ def allure_high_level_marks(epic: str, feature: str):
 
 
 def allure_mid_level_marks(
-        story: str, testcase_id: str, title: str, label: str, owner: str
+        story: str,
+        testcase_id: str,
+        title: str,
+        label: str,
+        owner: str
 ):
     def func_decorator(func):
         @wraps(func)

@@ -18,6 +18,14 @@ def log_response(status_code: int, reason: str, url: str):
 
 
 class BaseClient:
+    """
+    Базовый клиент для выполнения HTTP-запросов.
+
+    Этот класс предоставляет основные методы для выполнения HTTP-запросов
+    (GET, POST, PATCH, DELETE) и использует библиотеку requests для выполнения
+    запросов. Каждый метод добавлен с использованием allure для генерации
+    отчетов о тестах.
+    """
     def __init__(self, base_url: str, timeout: float):
         self.base_url = base_url
         self.timeout = timeout
@@ -32,7 +40,13 @@ class BaseClient:
         return response
 
     @step("Make POST request to {url}")
-    def post(self, url: str, json: Any = None, data: Any = None, files: Any = None) -> requests.Response:
+    def post(
+            self,
+            url: str,
+            json: Any = None,
+            data: Any = None,
+            files: Any = None
+    ) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request(method="POST", url=full_url)
         response = self.session.post(full_url, json=json, data=data, files=files, timeout=self.timeout)

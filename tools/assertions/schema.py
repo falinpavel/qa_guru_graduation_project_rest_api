@@ -11,4 +11,8 @@ logger = get_logger("SCHEMA_ASSERTIONS")
 @allure.step("Validating JSON schema")
 def validate_json_schema(instance: Any, schema: dict) -> None:
     logger.info("Validating JSON schema")
-    validate(schema=schema, instance=instance, format_checker=Draft202012Validator.FORMAT_CHECKER)
+    validate(
+        schema=schema,
+        instance=instance,
+        format_checker=Draft202012Validator.FORMAT_CHECKER
+    )

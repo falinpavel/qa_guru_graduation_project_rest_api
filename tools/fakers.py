@@ -15,7 +15,11 @@ class Fake:
         """
         self.faker = faker
 
-    def date(self, start: timedelta = timedelta(days=-30), end: timedelta = timedelta()) -> date:
+    def date(
+            self,
+            start: timedelta = timedelta(days=-30),
+            end: timedelta = timedelta()
+    ) -> date:
         """
         Генерирует случайную дату в заданном диапазоне.
 
@@ -25,7 +29,11 @@ class Fake:
         """
         return self.faker.date_between(start_date=start, end_date=end)
 
-    def money(self, start: float = -100, end: float = 100) -> float:
+    def money(
+            self,
+            start: float = -100,
+            end: float = 100
+    ) -> float:
         """
         Генерирует случайную сумму денег.
 

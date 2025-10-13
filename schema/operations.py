@@ -1,5 +1,10 @@
 from datetime import date
-from pydantic import BaseModel, Field, RootModel, ConfigDict
+from pydantic import (
+    BaseModel,
+    Field,
+    RootModel,
+    ConfigDict
+)
 from tools.fakers import fake
 
 

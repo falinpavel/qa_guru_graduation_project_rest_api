@@ -8,7 +8,8 @@ logger = get_logger("OPERATIONS_ASSERTIONS")
 
 
 @allure.step("Check create operation")
-def assert_create_operation(actual: OperationSchema, expected: CreateOperationSchema | UpdateOperationSchema):
+def assert_create_operation(actual: OperationSchema,
+                            expected: CreateOperationSchema | UpdateOperationSchema):
     logger.info("Check create operation")
     assert_equal(actual.debit, expected.debit, name="debit")
     assert_equal(actual.credit, expected.credit, name="credit")
