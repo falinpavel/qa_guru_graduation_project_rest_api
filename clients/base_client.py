@@ -2,9 +2,7 @@ import requests
 
 from typing import Any, Optional
 from urllib.parse import urljoin
-
 from allure_commons._allure import step
-
 from config import HTTPClientConfig
 from tools.logger import get_logger
 
