@@ -1,0 +1,6 @@
+"BROKEN","EPIC","FAILED","FEATURE","PASSED","SKIPPED","STORY","UNKNOWN"
+"0","Operations","0","Operations","1","0","User can delete operation by id","0"
+"0","Operations","0","Operations","1","0","User can create new operation","0"
+"0","Operations","0","Operations","1","0","User can get operation by id","0"
+"0","Operations","0","Operations","1","0","User can update operation by id","0"
+"0","Operations","0","Operations","0","1","User can get list of operations","0"
