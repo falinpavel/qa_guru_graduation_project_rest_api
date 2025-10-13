@@ -35,7 +35,11 @@ class BaseClient:
     def get(self, url: str, params: Optional[dict] = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request(method="GET", url=full_url)
-        response = self.session.get(full_url, params=params, timeout=self.timeout)
+        response = self.session.get(
+            url=full_url,
+            params=params,
+            timeout=self.timeout
+        )
         log_response(response.status_code, response.reason, full_url)
         return response
 
@@ -49,7 +53,13 @@ class BaseClient:
     ) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request(method="POST", url=full_url)
-        response = self.session.post(full_url, json=json, data=data, files=files, timeout=self.timeout)
+        response = self.session.post(
+            url=full_url,
+            json=json,
+            data=data,
+            files=files,
+            timeout=self.timeout
+        )
         log_response(response.status_code, response.reason, full_url)
         return response
 
@@ -57,7 +67,11 @@ class BaseClient:
     def patch(self, url: str, json: Any = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request(method="PATCH", url=full_url)
-        response = self.session.patch(full_url, json=json, timeout=self.timeout)
+        response = self.session.patch(
+            url=full_url,
+            json=json,
+            timeout=self.timeout
+        )
         log_response(response.status_code, response.reason, full_url)
         return response
 
@@ -65,7 +79,10 @@ class BaseClient:
     def delete(self, url: str) -> requests.Response:
         full_url = urljoin(self.base_url, url)
         log_request(method="DELETE", url=full_url)
-        response = self.session.delete(full_url, timeout=self.timeout)
+        response = self.session.delete(
+            url=full_url,
+            timeout=self.timeout
+        )
         log_response(response.status_code, response.reason, full_url)
         return response
 
