@@ -1,0 +1,15 @@
+INFO     HTTP_CLIENT:base_client.py:13 Make POST request to https://api.sampleapis.com/fakebank/accounts
+INFO     HTTP_CLIENT:base_client.py:17 Got response 201 Created from https://api.sampleapis.com/fakebank/accounts
+INFO     HTTP_CLIENT:base_client.py:13 Make GET request to https://api.sampleapis.com/fakebank/accounts/393
+INFO     HTTP_CLIENT:base_client.py:17 Got response 200 OK from https://api.sampleapis.com/fakebank/accounts/393
+INFO     BASE_ASSERTIONS:base.py:11 Check that response status code equals to 200
+INFO     OPERATIONS_ASSERTIONS:operations.py:23 Check operation
+INFO     BASE_ASSERTIONS:base.py:18 Check that "id" equals to 393
+INFO     BASE_ASSERTIONS:base.py:18 Check that "debit" equals to -30.67483
+INFO     BASE_ASSERTIONS:base.py:18 Check that "credit" equals to -70.1972722
+INFO     BASE_ASSERTIONS:base.py:18 Check that "category" equals to taxi
+INFO     BASE_ASSERTIONS:base.py:18 Check that "description" equals to Seek ok series around.
+INFO     BASE_ASSERTIONS:base.py:18 Check that "transaction_date" equals to 2025-10-03
+INFO     SCHEMA_ASSERTIONS:schema.py:13 Validating JSON schema
+INFO     HTTP_CLIENT:base_client.py:13 Make DELETE request to https://api.sampleapis.com/fakebank/accounts/393
+INFO     HTTP_CLIENT:base_client.py:17 Got response 200 OK from https://api.sampleapis.com/fakebank/accounts/393
