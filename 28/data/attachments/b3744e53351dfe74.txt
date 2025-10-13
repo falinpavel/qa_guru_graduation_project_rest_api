@@ -1,0 +1,10 @@
+INFO     HTTP_CLIENT:base_client.py:13 Make POST request to https://api.sampleapis.com/fakebank/accounts
+INFO     HTTP_CLIENT:base_client.py:17 Got response 201 Created from https://api.sampleapis.com/fakebank/accounts
+INFO     BASE_ASSERTIONS:base.py:11 Check that response status code equals to 201
+INFO     OPERATIONS_ASSERTIONS:operations.py:13 Check create operation
+INFO     BASE_ASSERTIONS:base.py:18 Check that "debit" equals to -90.3
+INFO     BASE_ASSERTIONS:base.py:18 Check that "credit" equals to 63.923437167383
+INFO     BASE_ASSERTIONS:base.py:18 Check that "category" equals to taxi
+INFO     BASE_ASSERTIONS:base.py:18 Check that "description" equals to Management our become evidence.
+INFO     BASE_ASSERTIONS:base.py:18 Check that "transaction_date" equals to 2025-09-30
+INFO     SCHEMA_ASSERTIONS:schema.py:13 Validating JSON schema
