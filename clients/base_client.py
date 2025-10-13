@@ -28,7 +28,7 @@ class BaseClient:
     @step("Make GET request to {url}")
     def get(self, url: str, params: Optional[dict] = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
-        log_request("GET", full_url)
+        log_request(method="GET", url=full_url)
         response = self.session.get(full_url, params=params, timeout=self.timeout)
         log_response(response.status_code, response.reason, full_url)
         return response
@@ -36,7 +36,7 @@ class BaseClient:
     @step("Make POST request to {url}")
     def post(self, url: str, json: Any = None, data: Any = None, files: Any = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
-        log_request("POST", full_url)
+        log_request(method="POST", url=full_url)
         response = self.session.post(full_url, json=json, data=data, files=files, timeout=self.timeout)
         log_response(response.status_code, response.reason, full_url)
         return response
@@ -44,7 +44,7 @@ class BaseClient:
     @step("Make PATCH request to {url}")
     def patch(self, url: str, json: Any = None) -> requests.Response:
         full_url = urljoin(self.base_url, url)
-        log_request("PATCH", full_url)
+        log_request(method="PATCH", url=full_url)
         response = self.session.patch(full_url, json=json, timeout=self.timeout)
         log_response(response.status_code, response.reason, full_url)
         return response
@@ -52,7 +52,7 @@ class BaseClient:
     @step("Make DELETE request to {url}")
     def delete(self, url: str) -> requests.Response:
         full_url = urljoin(self.base_url, url)
-        log_request("DELETE", full_url)
+        log_request(method="DELETE", url=full_url)
         response = self.session.delete(full_url, timeout=self.timeout)
         log_response(response.status_code, response.reason, full_url)
         return response
